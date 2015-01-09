@@ -8,7 +8,6 @@ Feature: Starting the game
     Then I should see "Welcome to Classic RPS"
     Then I should see "What is your name?"
     Then I enter "Huy"
-    When I click submit
     Then I shall be redirected to "/start"
 
   Scenario: Starting a new game
