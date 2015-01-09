@@ -1,11 +1,11 @@
-Then(/^I enter "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
+require 'uri'
+require 'cgi'
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
-Then(/^I shall be redirected to "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+module WithinHelpers
+  def with_scope(locator)
+    locator ? within(locator) { yield } : yield
+  end
 end
+World(WithinHelpers)
 
-Then(/^I shall see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
