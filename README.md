@@ -1,20 +1,24 @@
-Rock Paper Scissors
+Rock Paper Scissors 
 ===================
 
-Maker's Week 3 Challenge
+## Maker's Week 3 Challenge
 
-##Version: 1 player vs computer
+Version: 1 
+----------
+One player vs computer
 
-the marketeer has to enter their name before the game
-the marketeer will be presented the choices (rock, paper and scissors)
-the marketeer can choose one option
-the game will choose a random option
-a winner will be declared
+Brief from client:
 
-##Technologies Used
+* the marketeer has to enter their name before the game
+* the marketeer will be presented the choices (rock, paper and scissors)
+* the marketeer can choose one option
+* the game will choose a random option
+* a winner will be declared
 
-Ruby
-Rspec
-Capybara
-Cucumber
-HTML/CSS
+## Technologies Used
+
+- Ruby
+- Rspec
+- Capybara
+- Cucumber
+- HTML/CSS
