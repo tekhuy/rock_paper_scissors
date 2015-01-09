@@ -16,6 +16,15 @@ module NavigationHelpers
     when /new/
       '/new'
 
+    when /processing/
+      '/processing'
+
+    when /win/
+      '/win'
+
+    when /lose/
+      '/lose'  
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

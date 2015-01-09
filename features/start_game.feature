@@ -13,3 +13,13 @@ Feature: Starting the game
   Scenario: Starting a new game
     Given I am on the start page
     Then I shall see "Please choose your item"
+
+  Scenario: win
+    Given I have chosen my item
+    Then CPU chooses their item
+    Then I win
+
+  Scenario: lose
+    Given I have chosen my item
+    Then CPU chooses their item
+    Then I lose

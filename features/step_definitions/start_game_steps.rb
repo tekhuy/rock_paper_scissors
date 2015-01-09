@@ -32,3 +32,19 @@ end
 Then(/^I shall see "(.*?)"$/) do |arg1|
   page.has_content?(arg1)
 end
+
+Given(/^I have chosen my item$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^CPU chooses their item$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I win$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I lose$/) do
+  pending # express the regexp above with the code you wish you had
+end
