@@ -26,30 +26,28 @@ describe Game do
       expect(game.player.item).to eq :rock
     end
 
+    it 'can check what item a player has' do
+      game.add_player(player)
+      expect(game.player_item).to eq :rock
+    end
+
     it "can know the player has won when the player chose rock and compter chose scissors" do
         game.add_player(player)
-        allow(game).to receive(:choose).and_return :scissors
-        expect(game.winner).to eq game.player
+        game.item = :scissors
+        expect(game.result).to eq game.player
     end
 
     it "can know the computer has won when player chose rock and computer chose paper" do
       game.add_player(player)
-      allow(game).to receive(:choose).and_return :paper
-      expect(game.winner).to eq game
+      game.item = :paper
+      expect(game.result).to eq game
     end
 
-    # it "can know itself has won when player chooses rock and computer chooses paper" do
-    #   game.add_player(player)
-    #   allow(player).to receive(:item).and_return :scissors
-    #   allow(game).to receive(:choose).and_return :paper
-    #   expect(game.winner).to eq game.player
-    # end
-
-    # it "can know there is a draw when they are the same" do
-    #   game.add_player(player)
-    #   allow(game).to receive(:choose).and_return :rock
-    #   expect(game.winner).to eq "Draw"
-    # end
+    it "can know there is a draw when they are the same" do
+      game.add_player(player)
+      game.item = :rock
+      expect(game.result).to eq "Draw"
+    end
 
   end
 

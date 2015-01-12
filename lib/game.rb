@@ -2,9 +2,9 @@ class Game
 
   def initialize
     @player = nil
-    @item = nil
     @rps = [:rock, :paper, :scissors]
     @chosen = false
+    @item = nil
   end
 
   attr_accessor :player, :rps, :item
@@ -26,29 +26,22 @@ class Game
     @chosen
   end
 
+  def player_item
+    @player.item
+  end
 
-
-  # def pick(pick)
-  #   @pick = pick
-  # end
-
-  # def picked
-  #   @pick
-  # end
-
-
-  def winner
-    if
-      player.choose(:rock) && self.choose(:scissors)
-      player.choose(:paper) && self.choose(:rock)
-      player.choose(:scissors) && self.choose(:paper)
-      return player
-    else
-      player.choice == self.choice
-      return "Draw"
-    # elsif
-    #   return self
-    # end
+  def result
+    case 
+      when player_item == :rock && self.item == :scissors
+        return @player
+      when player_item == :paper && self.item == :rock
+        return @player
+      when player_item == :scissors && self.item == :paper
+        return @player
+      when player_item == self.item
+        return "Draw"
+      else
+        return self
     end
   end
 
