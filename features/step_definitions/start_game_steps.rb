@@ -34,15 +34,15 @@ Then(/^I shall see "(.*?)"$/) do |arg1|
 end
 
 Given(/^I have chosen my item$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/processing'
 end
 
 Then(/^CPU chooses their item$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/processing'
 end
 
 Then(/^I win$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/win'
 end
 
 Then(/^I lose$/) do

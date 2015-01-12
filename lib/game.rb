@@ -1,29 +1,55 @@
-require 'sinatra/base'
+class Game
 
-class RockPaperScissors < Sinatra::Base
-  
-  enable :sessions
-
-  get '/' do
-    erb :index
+  def initialize
+    @player = nil
+    @item = nil
+    @rps = [:rock, :paper, :scissors]
+    @chosen = false
   end
 
-  post '/new' do
-    @user = params[:user]
-    erb :new
+  attr_accessor :player, :rps, :item
+
+  def add_player(player)
+    @player = player
   end
 
-  get '/start' do
-    erb :new
+  def has_player?
+    !@player.nil?
   end
 
-  post '/processing' do
-    erb :processing
+  def choose
+    @chosen = true
+    @item = @rps.sample
   end
 
-  get '/processing' do
+  def chosen?
+    @chosen
   end
 
-  # start the server if ruby file executed directly
-  run! if app_file == $0
+
+
+  # def pick(pick)
+  #   @pick = pick
+  # end
+
+  # def picked
+  #   @pick
+  # end
+
+
+  def winner
+    if
+      player.choose(:rock) && self.choose(:scissors)
+      player.choose(:paper) && self.choose(:rock)
+      player.choose(:scissors) && self.choose(:paper)
+      return player
+    else
+      player.choice == self.choice
+      return "Draw"
+    # elsif
+    #   return self
+    # end
+    end
+  end
+
 end
