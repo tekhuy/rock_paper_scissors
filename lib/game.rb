@@ -45,4 +45,12 @@ class Game
     end
   end
 
+  def winner
+    win = { 
+      :rock => :scissors, 
+      :paper => :rock,
+      :scissors => :paper
+    }
+  end
+
 end

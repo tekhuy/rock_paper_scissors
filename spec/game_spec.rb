@@ -5,10 +5,13 @@ describe Game do
   let(:game){Game.new}
   let(:player){double :player, item: :rock}
 
+  before(:each) do
+    game.add_player(player)
+  end
+
   context 'A game can' do
 
     it 'add a player' do
-      game.add_player(player)
       expect(game.has_player?).to be true
     end
 
@@ -22,29 +25,24 @@ describe Game do
     end
 
     it "a player can choose an item" do
-      game.add_player(player)
       expect(game.player.item).to eq :rock
     end
 
     it 'can check what item a player has' do
-      game.add_player(player)
       expect(game.player_item).to eq :rock
     end
 
     it "can know the player has won when the player chose rock and compter chose scissors" do
-        game.add_player(player)
-        game.item = :scissors
-        expect(game.result).to eq game.player
+      game.item = :scissors
+      expect(game.result).to eq game.player
     end
 
     it "can know the computer has won when player chose rock and computer chose paper" do
-      game.add_player(player)
       game.item = :paper
       expect(game.result).to eq game
     end
 
     it "can know there is a draw when they are the same" do
-      game.add_player(player)
       game.item = :rock
       expect(game.result).to eq "Draw"
     end
