@@ -9,6 +9,8 @@ class Game
 
   attr_accessor :player, :rps, :item
 
+  WIN = {:rock => :scissors, :paper => :rock, :scissors => :paper}
+
   def add_player(player)
     @player = player
   end
@@ -30,27 +32,25 @@ class Game
     @player.item
   end
 
-  def result
-    case 
-      when player_item == :rock && self.item == :scissors
-        return @player
-      when player_item == :paper && self.item == :rock
-        return @player
-      when player_item == :scissors && self.item == :paper
-        return @player
-      when player_item == self.item
-        return "Draw"
-      else
-        return self
-    end
-  end
+  # def result
+  #   case 
+  #     when player_item == :rock && self.item == :scissors
+  #       return @player
+  #     when player_item == :paper && self.item == :rock
+  #       return @player
+  #     when player_item == :scissors && self.item == :paper
+  #       return @player
+  #     when player_item == self.item
+  #       return "Draw"
+  #     else
+  #       return self
+  #   end
+  # end
 
-  def winner
-    win = { 
-      :rock => :scissors, 
-      :paper => :rock,
-      :scissors => :paper
-    }
+  def result
+    return 'Draw' if player_item == self.item
+    return @player if WIN[player_item] == self.item
+    return self
   end
 
 end
